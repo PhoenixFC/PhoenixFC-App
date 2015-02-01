@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA904881A7288EF00D728A8 /* AppDelegate.m */; };
+		EFA9048B1A7288EF00D728A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048A1A7288EF00D728A8 /* main.m */; };
+		EFA9048E1A7288EF00D728A8 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */; };
+		EFA904901A7288EF00D728A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA9048F1A7288EF00D728A8 /* Images.xcassets */; };
+		EFA904931A7288EF00D728A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA904911A7288EF00D728A8 /* Main.storyboard */; };
+		EFA9049F1A7288EF00D728A8 /* PhoenixFCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9049E1A7288EF00D728A8 /* PhoenixFCTests.m */; };
+		EFA904B31A72892D00D728A8 /* ORSSerial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA904AE1A72891600D728A8 /* ORSSerial.framework */; };
+		EFFB82A41A7DFB2C00F5643A /* TransmitterConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFB82A31A7DFB2C00F5643A /* TransmitterConfigViewController.m */; };
+		EFFB82A71A7DFDC600F5643A /* FlightController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFB82A61A7DFDC600F5643A /* FlightController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFA904991A7288EF00D728A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFA9047A1A7288EF00D728A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFA904811A7288EF00D728A8;
+			remoteInfo = PhoenixFC;
+		};
+		EFA904AD1A72891600D728A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFA904A91A72891600D728A8 /* ORSSerialPort.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9DCA89121A2BB106009285EB;
+			remoteInfo = ORSSerial;
+		};
+		EFA904B11A72892800D728A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFA904A91A72891600D728A8 /* ORSSerialPort.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DCA89111A2BB106009285EB;
+			remoteInfo = ORSSerial;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EFA904821A7288EF00D728A8 /* PhoenixFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA904861A7288EF00D728A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFA904871A7288EF00D728A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EFA904881A7288EF00D728A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EFA9048A1A7288EF00D728A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EFA9048C1A7288EF00D728A8 /* ConsoleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
+		EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
+		EFA9048F1A7288EF00D728A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EFA904921A7288EF00D728A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EFA904981A7288EF00D728A8 /* PhoenixFCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoenixFCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA9049D1A7288EF00D728A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFA9049E1A7288EF00D728A8 /* PhoenixFCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoenixFCTests.m; sourceTree = "<group>"; };
+		EFA904A91A72891600D728A8 /* ORSSerialPort.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ORSSerialPort.xcodeproj; path = "../ORSSerialPort/Framework Project/ORSSerialPort.xcodeproj"; sourceTree = "<group>"; };
+		EFFB82A21A7DFB2C00F5643A /* TransmitterConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterConfigViewController.h; sourceTree = "<group>"; };
+		EFFB82A31A7DFB2C00F5643A /* TransmitterConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterConfigViewController.m; sourceTree = "<group>"; };
+		EFFB82A51A7DFDC600F5643A /* FlightController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightController.h; sourceTree = "<group>"; };
+		EFFB82A61A7DFDC600F5643A /* FlightController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFA9047F1A7288EF00D728A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA904B31A72892D00D728A8 /* ORSSerial.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA904951A7288EF00D728A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFA904791A7288EF00D728A8 = {
+			isa = PBXGroup;
+			children = (
+				EFA904A91A72891600D728A8 /* ORSSerialPort.xcodeproj */,
+				EFA904841A7288EF00D728A8 /* PhoenixFC */,
+				EFA9049B1A7288EF00D728A8 /* PhoenixFCTests */,
+				EFA904831A7288EF00D728A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFA904831A7288EF00D728A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFA904821A7288EF00D728A8 /* PhoenixFC.app */,
+				EFA904981A7288EF00D728A8 /* PhoenixFCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFA904841A7288EF00D728A8 /* PhoenixFC */ = {
+			isa = PBXGroup;
+			children = (
+				EFA904871A7288EF00D728A8 /* AppDelegate.h */,
+				EFA904881A7288EF00D728A8 /* AppDelegate.m */,
+				EFA9048C1A7288EF00D728A8 /* ConsoleViewController.h */,
+				EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */,
+				EFA9048F1A7288EF00D728A8 /* Images.xcassets */,
+				EFA904911A7288EF00D728A8 /* Main.storyboard */,
+				EFA904851A7288EF00D728A8 /* Supporting Files */,
+				EFFB82A21A7DFB2C00F5643A /* TransmitterConfigViewController.h */,
+				EFFB82A31A7DFB2C00F5643A /* TransmitterConfigViewController.m */,
+				EFFB82A51A7DFDC600F5643A /* FlightController.h */,
+				EFFB82A61A7DFDC600F5643A /* FlightController.m */,
+			);
+			name = PhoenixFC;
+			path = PhoenixFC;
+			sourceTree = "<group>";
+		};
+		EFA904851A7288EF00D728A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFA904861A7288EF00D728A8 /* Info.plist */,
+				EFA9048A1A7288EF00D728A8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFA9049B1A7288EF00D728A8 /* PhoenixFCTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFA9049E1A7288EF00D728A8 /* PhoenixFCTests.m */,
+				EFA9049C1A7288EF00D728A8 /* Supporting Files */,
+			);
+			name = PhoenixFCTests;
+			path = PhoenixFCTests;
+			sourceTree = "<group>";
+		};
+		EFA9049C1A7288EF00D728A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFA9049D1A7288EF00D728A8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFA904AA1A72891600D728A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFA904AE1A72891600D728A8 /* ORSSerial.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFA904811A7288EF00D728A8 /* PhoenixFC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA904A21A7288EF00D728A8 /* Build configuration list for PBXNativeTarget "PhoenixFC" */;
+			buildPhases = (
+				EFA9047E1A7288EF00D728A8 /* Sources */,
+				EFA9047F1A7288EF00D728A8 /* Frameworks */,
+				EFA904801A7288EF00D728A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFA904B21A72892800D728A8 /* PBXTargetDependency */,
+			);
+			name = PhoenixFC;
+			productName = PhoenixFC;
+			productReference = EFA904821A7288EF00D728A8 /* PhoenixFC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFA904971A7288EF00D728A8 /* PhoenixFCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA904A51A7288EF00D728A8 /* Build configuration list for PBXNativeTarget "PhoenixFCTests" */;
+			buildPhases = (
+				EFA904941A7288EF00D728A8 /* Sources */,
+				EFA904951A7288EF00D728A8 /* Frameworks */,
+				EFA904961A7288EF00D728A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFA9049A1A7288EF00D728A8 /* PBXTargetDependency */,
+			);
+			name = PhoenixFCTests;
+			productName = PhoenixFCTests;
+			productReference = EFA904981A7288EF00D728A8 /* PhoenixFCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFA9047A1A7288EF00D728A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Colin Harris";
+				TargetAttributes = {
+					EFA904811A7288EF00D728A8 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					EFA904971A7288EF00D728A8 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = EFA904811A7288EF00D728A8;
+					};
+				};
+			};
+			buildConfigurationList = EFA9047D1A7288EF00D728A8 /* Build configuration list for PBXProject "PhoenixFC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFA904791A7288EF00D728A8;
+			productRefGroup = EFA904831A7288EF00D728A8 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EFA904AA1A72891600D728A8 /* Products */;
+					ProjectRef = EFA904A91A72891600D728A8 /* ORSSerialPort.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				EFA904811A7288EF00D728A8 /* PhoenixFC */,
+				EFA904971A7288EF00D728A8 /* PhoenixFCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EFA904AE1A72891600D728A8 /* ORSSerial.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ORSSerial.framework;
+			remoteRef = EFA904AD1A72891600D728A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFA904801A7288EF00D728A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA904901A7288EF00D728A8 /* Images.xcassets in Resources */,
+				EFA904931A7288EF00D728A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA904961A7288EF00D728A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFA9047E1A7288EF00D728A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA9048E1A7288EF00D728A8 /* ConsoleViewController.m in Sources */,
+				EFA9048B1A7288EF00D728A8 /* main.m in Sources */,
+				EFFB82A71A7DFDC600F5643A /* FlightController.m in Sources */,
+				EFFB82A41A7DFB2C00F5643A /* TransmitterConfigViewController.m in Sources */,
+				EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA904941A7288EF00D728A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA9049F1A7288EF00D728A8 /* PhoenixFCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFA9049A1A7288EF00D728A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFA904811A7288EF00D728A8 /* PhoenixFC */;
+			targetProxy = EFA904991A7288EF00D728A8 /* PBXContainerItemProxy */;
+		};
+		EFA904B21A72892800D728A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ORSSerial;
+			targetProxy = EFA904B11A72892800D728A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EFA904911A7288EF00D728A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFA904921A7288EF00D728A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFA904A01A7288EF00D728A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EFA904A11A7288EF00D728A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EFA904A31A7288EF00D728A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../ORSSerialPort/**",
+				);
+				INFOPLIST_FILE = PhoenixFC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = PhoenixFC;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EFA904A41A7288EF00D728A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../ORSSerialPort/**",
+				);
+				INFOPLIST_FILE = PhoenixFC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = PhoenixFC;
+			};
+			name = Release;
+		};
+		EFA904A61A7288EF00D728A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PhoenixFCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = PhoenixFCTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoenixFC.app/Contents/MacOS/PhoenixFC";
+			};
+			name = Debug;
+		};
+		EFA904A71A7288EF00D728A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PhoenixFCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = PhoenixFCTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoenixFC.app/Contents/MacOS/PhoenixFC";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFA9047D1A7288EF00D728A8 /* Build configuration list for PBXProject "PhoenixFC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA904A01A7288EF00D728A8 /* Debug */,
+				EFA904A11A7288EF00D728A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA904A21A7288EF00D728A8 /* Build configuration list for PBXNativeTarget "PhoenixFC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA904A31A7288EF00D728A8 /* Debug */,
+				EFA904A41A7288EF00D728A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA904A51A7288EF00D728A8 /* Build configuration list for PBXNativeTarget "PhoenixFCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA904A61A7288EF00D728A8 /* Debug */,
+				EFA904A71A7288EF00D728A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFA9047A1A7288EF00D728A8 /* Project object */;
+}
