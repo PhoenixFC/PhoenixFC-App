@@ -10,6 +10,12 @@
 
 #define NO_VALUE -123456789
 
+@interface FlightController ()
+
+@property (strong) NSMutableString *inputBuffer;
+
+@end
+
 @implementation FlightController
 
 @synthesize serialPort, consoleOutput, delegate;
@@ -23,6 +29,7 @@
         serialPort.delegate = self;
         serialPort.baudRate = @9600;
         
+        self.inputBuffer = [[NSMutableString alloc] init];
     }
     return self;
 }
@@ -54,8 +61,19 @@
 
 - (void)serialPort:(ORSSerialPort *)serialPort didReceiveData:(NSData *)data {
     NSString *value = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    [self appendText:value];
+    [self.inputBuffer appendString:value];
+    
+    NSRange range = [self.inputBuffer rangeOfString:@";"];
+    if( range.location != NSNotFound ) {
+        NSString *line = [self.inputBuffer substringToIndex:range.location];
+        [self.inputBuffer deleteCharactersInRange:NSMakeRange(0, range.location+1)];
+        [self processInput:line];
+    }
+}
 
+- (void)processInput:(NSString *)value {
+    [self appendText:value];
+    
     if( [value hasPrefix:@"Throttle:"] ) {
         NSInteger throttle = [self valueForChannel:@"Throttle:" inString:value];
         NSInteger yaw = [self valueForChannel:@"Yaw:" inString:value];
