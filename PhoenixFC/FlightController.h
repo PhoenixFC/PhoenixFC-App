@@ -9,10 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "ORSSerialPort.h"
 
+typedef struct _RxPacket
+{
+    NSInteger channel1;
+    NSInteger channel2;
+    NSInteger channel3;
+    NSInteger channel4;
+    NSInteger channel5;
+    NSInteger channel6;
+} RxPacket;
+
 @protocol FlightControllerDelegate
 @optional
-- (void)flightControllerDidReceiveThrottle:(NSInteger)throttle yaw:(NSInteger)yaw pitch:(NSInteger)pitch roll:(NSInteger)roll;
 - (void)flightControllerConsoleDidChange:(NSString *)value;
+- (void)flightControllerDidReceiveRxPacket:(RxPacket)packet;
 @end
 
 @interface FlightController : NSObject <ORSSerialPortDelegate>
@@ -24,5 +34,7 @@
 - (void)connect;
 - (void)disconnect;
 - (BOOL)isConnected;
+
+- (void)sendRxRequest;
 
 @end

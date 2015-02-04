@@ -7,6 +7,8 @@
 //
 
 #import "FlightController.h"
+#import "ORSSerialRequest.h"
+#import "NSData+PhoenixFC.h"
 
 #define NO_VALUE -123456789
 
@@ -59,40 +61,43 @@
     [self.serialPort sendData:[string dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
-- (void)serialPort:(ORSSerialPort *)serialPort didReceiveData:(NSData *)data {
-    NSString *value = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    [self.inputBuffer appendString:value];
-    
-    NSRange range = [self.inputBuffer rangeOfString:@";"];
-    if( range.location != NSNotFound ) {
-        NSString *line = [self.inputBuffer substringToIndex:range.location];
-        [self.inputBuffer deleteCharactersInRange:NSMakeRange(0, range.location+1)];
-        [self processInput:line];
+- (void)sendRxRequest {
+    NSData *requestData = [@"RX" dataUsingEncoding:NSASCIIStringEncoding];
+    ORSSerialRequest *request = [ORSSerialRequest
+                                  requestWithDataToSend:requestData
+                                               userInfo:@"RX"
+                                        timeoutInterval:0.5
+                                      responseEvaluator:^BOOL(NSData *inputData) {
+                                          if ([inputData length] != 54) return NO;
+                                          NSData *headerData = [inputData subdataWithRange:NSMakeRange(0, 4)];
+                                          NSString *header = [[NSString alloc] initWithData:headerData encoding:NSASCIIStringEncoding];
+                                          return [header isEqualToString:@"CH1:"];
+                                      }];
+    [serialPort sendRequest:request];
+}
+
+- (void)serialPort:(ORSSerialPort *)serialPort didReceiveResponse:(NSData *)responseData toRequest:(ORSSerialRequest *)request {
+    NSString *requestId = [request userInfo];
+    if( [requestId isEqualToString:@"RX"] ) {
+        [self processRxPacket:(NSData *)responseData];
     }
 }
 
-- (void)processInput:(NSString *)value {
-    [self appendText:value];
-    
-    if( [value hasPrefix:@"Throttle:"] ) {
-        NSInteger throttle = [self valueForChannel:@"Throttle:" inString:value];
-        NSInteger yaw = [self valueForChannel:@"Yaw:" inString:value];
-        NSInteger pitch = [self valueForChannel:@"Pitch:" inString:value];
-        NSInteger roll = [self valueForChannel:@"Roll:" inString:value];
-        
-        if( throttle != NO_VALUE && [delegate respondsToSelector:@selector(flightControllerDidReceiveThrottle:yaw:pitch:roll:)] ) {
-            [delegate flightControllerDidReceiveThrottle:throttle yaw:yaw pitch:pitch roll:roll];
-        }
-    }
+- (void)serialPort:(ORSSerialPort *)serialPort requestDidTimeout:(ORSSerialRequest *)request {
+    NSLog(@"timeout");
 }
 
-- (NSInteger)valueForChannel:(NSString *)channelName inString:(NSString *)value {
-    NSRange range = [value rangeOfString:channelName];
-    if( range.location != NSNotFound ) {
-        NSRange valueRange = NSMakeRange(range.location+[channelName length], 4);
-        return [[value substringWithRange:valueRange] intValue];
-    }
-    return NO_VALUE;
+// Packet Format
+// CH1:1000,CH2:1000,CH3:1000,CH4:1000,CH5:1000,CH6:1000;
+- (void)processRxPacket:(NSData *)data {
+    RxPacket packet;
+    packet.channel1 = [data getIntegerWithRange:NSMakeRange(4,4)];
+    packet.channel2 = [data getIntegerWithRange:NSMakeRange(13,4)];
+    packet.channel3 = [data getIntegerWithRange:NSMakeRange(22,4)];
+    packet.channel4 = [data getIntegerWithRange:NSMakeRange(31,4)];
+    packet.channel5 = [data getIntegerWithRange:NSMakeRange(40,4)];
+    packet.channel6 = [data getIntegerWithRange:NSMakeRange(49,4)];
+    [delegate flightControllerDidReceiveRxPacket:packet];
 }
 
 - (void)serialPortWasRemovedFromSystem:(ORSSerialPort *)serialPort {
@@ -116,6 +121,5 @@
         [delegate flightControllerConsoleDidChange:text];
     [consoleOutput appendString:[NSString stringWithFormat:@"%@",text]];
 }
-
 
 @end
