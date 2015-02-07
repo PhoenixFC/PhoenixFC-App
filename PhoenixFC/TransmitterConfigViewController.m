@@ -42,7 +42,7 @@
 
 - (void)startTimer {
     if( self.rxUpdateTimer == nil ) {
-        self.rxUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:(1/20) target:flightController selector:@selector(sendRxRequest) userInfo:nil repeats:YES];
+        self.rxUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:flightController selector:@selector(sendRxRequest) userInfo:nil repeats:YES];
     }
 }
 

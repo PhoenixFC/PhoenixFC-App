@@ -66,7 +66,7 @@
     ORSSerialRequest *request = [ORSSerialRequest
                                   requestWithDataToSend:requestData
                                                userInfo:@"RX"
-                                        timeoutInterval:0.5
+                                        timeoutInterval:0.1
                                       responseEvaluator:^BOOL(NSData *inputData) {
                                           if ([inputData length] != 54) return NO;
                                           NSData *headerData = [inputData subdataWithRange:NSMakeRange(0, 4)];
@@ -97,7 +97,8 @@
     packet.channel4 = [data getIntegerWithRange:NSMakeRange(31,4)];
     packet.channel5 = [data getIntegerWithRange:NSMakeRange(40,4)];
     packet.channel6 = [data getIntegerWithRange:NSMakeRange(49,4)];
-    [delegate flightControllerDidReceiveRxPacket:packet];
+    if( [delegate respondsToSelector:@selector(flightControllerDidReceiveRxPacket:)] )
+        [delegate flightControllerDidReceiveRxPacket:packet];
 }
 
 - (void)serialPortWasRemovedFromSystem:(ORSSerialPort *)serialPort {
