@@ -11,6 +11,7 @@
 		A0329110D27DED4E27232607 /* libPods-PhoenixFCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF33E7EAAAAB67F9716E57E /* libPods-PhoenixFCTests.a */; };
 		EF2CF2DC1A827C23003D1AE4 /* NSData+PhoenixFC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */; };
 		EF2CF2DE1A827D02003D1AE4 /* NSData+PhoenixFC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2CF2DD1A827D02003D1AE4 /* NSData+PhoenixFC.m */; };
+		EF487A571A86DFF90007E897 /* RxConfigWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */; };
 		EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA904881A7288EF00D728A8 /* AppDelegate.m */; };
 		EFA9048B1A7288EF00D728A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048A1A7288EF00D728A8 /* main.m */; };
 		EFA9048E1A7288EF00D728A8 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */; };
@@ -41,6 +42,8 @@
 		EF2CF2DA1A827C23003D1AE4 /* NSData+PhoenixFC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PhoenixFC.h"; sourceTree = "<group>"; };
 		EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PhoenixFC.m"; sourceTree = "<group>"; };
 		EF2CF2DD1A827D02003D1AE4 /* NSData+PhoenixFC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PhoenixFC.m"; sourceTree = "<group>"; };
+		EF487A551A86DFF90007E897 /* RxConfigWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxConfigWizardViewController.h; sourceTree = "<group>"; };
+		EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxConfigWizardViewController.m; sourceTree = "<group>"; };
 		EFA904821A7288EF00D728A8 /* PhoenixFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA904861A7288EF00D728A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFA904871A7288EF00D728A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				EFFB82A61A7DFDC600F5643A /* FlightController.m */,
 				EF2CF2DA1A827C23003D1AE4 /* NSData+PhoenixFC.h */,
 				EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */,
+				EF487A551A86DFF90007E897 /* RxConfigWizardViewController.h */,
+				EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */,
 			);
 			path = PhoenixFC;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				EFA9048B1A7288EF00D728A8 /* main.m in Sources */,
 				EFFB82A71A7DFDC600F5643A /* FlightController.m in Sources */,
 				EFFB82A41A7DFB2C00F5643A /* TransmitterConfigViewController.m in Sources */,
+				EF487A571A86DFF90007E897 /* RxConfigWizardViewController.m in Sources */,
 				EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

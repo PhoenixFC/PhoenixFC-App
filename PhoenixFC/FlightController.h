@@ -23,6 +23,7 @@ typedef struct _RxPacket
 @optional
 - (void)flightControllerConsoleDidChange:(NSString *)value;
 - (void)flightControllerDidReceiveRxPacket:(RxPacket)packet;
+- (void)flightControllerDidReceiveRawRxPacket:(RxPacket)packet;
 @end
 
 @interface FlightController : NSObject <ORSSerialPortDelegate>
@@ -36,5 +37,6 @@ typedef struct _RxPacket
 - (BOOL)isConnected;
 
 - (void)sendRxRequest;
+- (void)sendRawRxRequest;
 
 @end

@@ -76,10 +76,34 @@
     [serialPort sendRequest:request];
 }
 
+- (void)sendRawRxRequest {
+    NSData *requestData = [@"RR" dataUsingEncoding:NSASCIIStringEncoding];
+    ORSSerialRequest *request = [ORSSerialRequest
+                                 requestWithDataToSend:requestData
+                                 userInfo:@"RR"
+                                 timeoutInterval:0.1
+                                 responseEvaluator:^BOOL(NSData *inputData) {
+                                     if ([inputData length] != 54) return NO;
+                                     NSData *headerData = [inputData subdataWithRange:NSMakeRange(0, 4)];
+                                     NSString *header = [[NSString alloc] initWithData:headerData encoding:NSASCIIStringEncoding];
+                                     return [header isEqualToString:@"CH1:"];
+                                 }];
+    [serialPort sendRequest:request];
+}
+
 - (void)serialPort:(ORSSerialPort *)serialPort didReceiveResponse:(NSData *)responseData toRequest:(ORSSerialRequest *)request {
     NSString *requestId = [request userInfo];
-    if( [requestId isEqualToString:@"RX"] ) {
-        [self processRxPacket:(NSData *)responseData];
+    if( [requestId isEqualToString:@"RX"] )
+    {
+        RxPacket packet = [self processRxPacket:responseData];
+        if( [delegate respondsToSelector:@selector(flightControllerDidReceiveRxPacket:)] )
+            [delegate flightControllerDidReceiveRxPacket:packet];
+    }
+    else if( [requestId isEqualToString:@"RR"] )
+    {
+        RxPacket packet = [self processRxPacket:responseData];
+        if( [delegate respondsToSelector:@selector(flightControllerDidReceiveRawRxPacket:)] )
+            [delegate flightControllerDidReceiveRawRxPacket:packet];
     }
 }
 
@@ -89,7 +113,7 @@
 
 // Packet Format
 // CH1:1000,CH2:1000,CH3:1000,CH4:1000,CH5:1000,CH6:1000;
-- (void)processRxPacket:(NSData *)data {
+- (RxPacket)processRxPacket:(NSData *)data {
     RxPacket packet;
     packet.channel1 = [data getIntegerWithRange:NSMakeRange(4,4)];
     packet.channel2 = [data getIntegerWithRange:NSMakeRange(13,4)];
@@ -97,8 +121,7 @@
     packet.channel4 = [data getIntegerWithRange:NSMakeRange(31,4)];
     packet.channel5 = [data getIntegerWithRange:NSMakeRange(40,4)];
     packet.channel6 = [data getIntegerWithRange:NSMakeRange(49,4)];
-    if( [delegate respondsToSelector:@selector(flightControllerDidReceiveRxPacket:)] )
-        [delegate flightControllerDidReceiveRxPacket:packet];
+    return packet;
 }
 
 - (void)serialPortWasRemovedFromSystem:(ORSSerialPort *)serialPort {
