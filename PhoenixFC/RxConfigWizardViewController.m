@@ -6,13 +6,21 @@
 //  Copyright (c) 2015 Colin Harris. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "RxConfigWizardViewController.h"
 #import "AppDelegate.h"
-#import "BlueDotView.h"
-#import <QuartzCore/QuartzCore.h>
+#import "RxWizardStep.h"
+#import "ChannelConfig.h"
 
 @interface RxConfigWizardViewController ()
 @property (strong) NSTimer *rxUpdateTimer;
+@property (strong) NSArray *steps;
+@property (assign) RxWizardStep *currentStep;
+
+@property (strong) ChannelConfig *throttleConfig;
+@property (strong) ChannelConfig *yawConfig;
+@property (strong) ChannelConfig *pitchConfig;
+@property (strong) ChannelConfig *rollConfig;
 @end
 
 @implementation RxConfigWizardViewController{
@@ -21,47 +29,89 @@
     NSInteger maxValues[6];
     NSInteger ranges[6];
     
-    NSArray *stepLabels;
-    NSArray *stepImages;
-    int currentStep;
-    
-    BlueDotView *dot;
-    
 }
 
 @synthesize flightController;
+@synthesize label, transmitterView;
 @synthesize rxUpdateTimer;
-@synthesize imageView;
-@synthesize label;
+@synthesize steps, currentStep;
+@synthesize throttleConfig, yawConfig, pitchConfig, rollConfig;
+@synthesize throttleReverse, yawReverse, pitchReverse, rollReverse;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    stepLabels = @[
-              @"Step 1: Move your throttle up and down to it's limits.",
-              @"Step 2: Move your yaw left and right to it's limits.",
-              @"Step 3: Move your pitch up and down to its limits.",
-              @"Step 4: Move your roll left and right to its limits."
+    self.throttleConfig = [[ChannelConfig alloc] init];
+    self.yawConfig = [[ChannelConfig alloc] init];
+    self.pitchConfig = [[ChannelConfig alloc] init];
+    self.rollConfig = [[ChannelConfig alloc] init];
+    
+    self.steps = @[
+              [[RxWizardStep alloc] initWithLabel:@"Step 1: Move your throttle up and down to it's limits."
+                                        imageName:@"Radio_Throttle"
+                                      andSelector:@selector(animateThrottle)],
+              
+              [[RxWizardStep alloc] initWithLabel:@"Step 2: Move your yaw left and right to it's limits."
+                                        imageName:@"Radio_Yaw"
+                                      andSelector:@selector(animateYaw)],
+              
+              [[RxWizardStep alloc] initWithLabel:@"Step 3: Move your pitch up and down to its limits."
+                                        imageName:@"Radio_Pitch"
+                                      andSelector:@selector(animatePitch)],
+              
+              [[RxWizardStep alloc] initWithLabel:@"Step 4: Move your roll left and right to its limits."
+                                        imageName:@"Radio_Roll"
+                                      andSelector:@selector(animateRoll)],
+              
+              [[RxWizardStep alloc] initWithLabel:@"Step 5: Confirm all controls move as expected."
+                                        imageName:@"Radio_Blank"
+                                      andSelector:@selector(removeAnimations)]
               ];
-    stepImages = @[
-                @"Radio_Throttle",
-                @"Radio_Yaw",
-                @"Radio_Pitch",
-                @"Radio_Roll",
-                ];
     
     [self reset];
-    
-    currentStep = 0;
-    [self moveToStep:currentStep];
     
     AppDelegate *appDelegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
     self.flightController = appDelegate.flightController;
 }
 
-- (void)moveToStep:(int)step {
-    self.label.stringValue = [stepLabels objectAtIndex:currentStep];
-    self.imageView.image = [NSImage imageNamed:[stepImages objectAtIndex:currentStep]];
+- (void)moveToNextStep {
+    if( currentStep != [steps lastObject] ) {
+        NSUInteger index = [steps indexOfObject:currentStep];
+        currentStep = index == NSNotFound ? [steps firstObject] : [steps objectAtIndex:index+1];
+        
+        label.stringValue = currentStep.label;
+        transmitterView.imageView.image = [NSImage imageNamed:currentStep.transmitterImageName];
+        if( [transmitterView respondsToSelector:currentStep.animationSelector] )
+            [transmitterView performSelector:currentStep.animationSelector];
+    } else {
+        // Finished!
+        // TODO: WTF do I do now ?!?
+        NSLog(@"Throttle: %@", [throttleConfig toString]);
+        NSLog(@"Yaw: %@", [yawConfig toString]);
+        NSLog(@"Pitch: %@", [pitchConfig toString]);
+        NSLog(@"Roll: %@", [rollConfig toString]);
+    }
+}
+
+- (void)moveToPrevStep {
+    if( currentStep != [steps firstObject] ) {
+        NSUInteger index = [steps indexOfObject:currentStep];
+        currentStep = index == NSNotFound ? [steps lastObject] : [steps objectAtIndex:index-1];
+        
+        label.stringValue = currentStep.label;
+        transmitterView.imageView.image = [NSImage imageNamed:currentStep.transmitterImageName];
+        if( [transmitterView respondsToSelector:currentStep.animationSelector] )
+            [transmitterView performSelector:currentStep.animationSelector];
+    } else {
+        // Finished!
+        // TODO: WTF do I do now ?!?
+        NSLog(@"Throttle: %@", [throttleConfig toString]);
+        NSLog(@"Yaw: %@", [yawConfig toString]);
+        NSLog(@"Pitch: %@", [pitchConfig toString]);
+        NSLog(@"Roll: %@", [rollConfig toString]);
+        
+        [self dismissViewController:self];
+    }
 }
 
 - (void)viewDidAppear {
@@ -70,39 +120,10 @@
     flightController.delegate = self;
     [flightController connect];
     
-//    [self addDot];
+    [self startTimer];
     
-//    [self startTimer];
-    
-//    self.imageView.hidden = YES;
-    
-    
-    CALayer* layer = [CALayer layer];
-    [layer setFrame:CGRectMake(65, 110, 20, 20)];
-    [self.imageView.layer addSublayer:layer];
-    
-    [layer setDelegate:self];
-    [layer setNeedsDisplay];
-    
-    CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    [animation setDuration:1.5];
-    [animation setRepeatCount:INT_MAX];
-    [animation setAutoreverses:YES];
-    [animation setFromValue:[NSValue valueWithPoint:CGPointMake(69, 90)]];
-    [animation setToValue:[NSValue valueWithPoint:CGPointMake(69, 150)]];
-    [layer addAnimation:animation forKey:nil];
+    [self moveToNextStep];
 }
-
-- (void)drawLayer:(CALayer*)layer inContext:(CGContextRef)ctx
-{
-    CGRect borderRect = CGRectMake(3, 3, 14, 14);
-    CGContextSetStrokeColorWithColor(ctx, [NSColor blueColor].CGColor);
-    CGContextSetFillColorWithColor(ctx, [NSColor blueColor].CGColor);
-    CGContextFillEllipseInRect(ctx, borderRect);
-    CGContextFillPath(ctx);
-}
-
-
 
 - (void)viewWillDisappear {
     [super viewWillDisappear];
@@ -125,21 +146,58 @@
     self.rxUpdateTimer = nil;
 }
 
+- (ChannelConfig *)channelConfigForStep {
+    NSUInteger index = [steps indexOfObject:currentStep];
+    if( index == 0 ) {
+        return throttleConfig;
+    }
+    else if( index == 1 ) {
+        return yawConfig;
+    }
+    else if( index == 2 ) {
+        return pitchConfig;
+    }
+    else if( index == 3 ) {
+        return rollConfig;
+    }
+    return nil;
+}
+
 - (IBAction)nextClicked:(id)sender {
     NSLog(@"nextClicked");
-    [self updateChannelRanges];
-    
-    int channel = [self channelWithMaxRange];
-    NSLog(@"Channel %d - Min: %lu  Max: %lu", channel, minValues[channel-1], maxValues[channel-1]);
+
+    ChannelConfig *channelConfig = [self channelConfigForStep];
+    if( channelConfig ) {
+        [self updateChannelRanges];
+        int channel = [self channelWithMaxRange];
+        channelConfig.channel = channel;
+        channelConfig.minValue = minValues[channel-1];
+        channelConfig.maxValue = maxValues[channel-1];
+        NSLog(@"Channel %d - Min: %lu  Max: %lu", channel, minValues[channel-1], maxValues[channel-1]);
+    }
     
     [self reset];
-    currentStep += 1;
-    [self moveToStep:currentStep];
+    [self moveToNextStep];
+}
+
+- (IBAction)prevClicked:(id)sender {
+    NSLog(@"prevClicked");
+    [self reset];
+    [self moveToPrevStep];
 }
 
 - (void)flightControllerDidReceiveRawRxPacket:(RxPacket)packet {
-    [self updateMinChannelValues:packet];
-    [self updateMaxChannelValues:packet];
+    if( currentStep != [steps lastObject] ) {
+        [self updateMinChannelValues:packet];
+        [self updateMaxChannelValues:packet];
+    } else {
+        NSInteger throttle = [throttleConfig valueFromPacket:packet];
+        NSInteger yaw = [yawConfig valueFromPacket:packet];
+        NSInteger pitch = [pitchConfig valueFromPacket:packet];
+        NSInteger roll = [rollConfig valueFromPacket:packet];
+        NSLog(@"Update Tx - THR: %lu, YAW: %lu, PIT: %lu ROL: %lu", throttle, yaw, pitch, roll);
+        [transmitterView updateThrottle:throttle yaw:yaw pitch:pitch roll:roll];
+    }
 }
 
 - (void)reset {
@@ -200,6 +258,26 @@
 
 -(IBAction)close:(id)sender {
     NSLog(@"Closing the Rx Wizard!");
+}
+
+- (IBAction)throttleReverseClicked:(id)sender {
+    NSButton *button = (NSButton *)sender;
+    throttleConfig.reversed = button.state == NSOnState;
+}
+
+- (IBAction)yawReverseClicked:(id)sender {
+    NSButton *button = (NSButton *)sender;
+    yawConfig.reversed = button.state == NSOnState;
+}
+
+- (IBAction)pitchReverseClicked:(id)sender {
+    NSButton *button = (NSButton *)sender;
+    pitchConfig.reversed = button.state == NSOnState;
+}
+
+- (IBAction)rollReverseClicked:(id)sender {
+    NSButton *button = (NSButton *)sender;
+    rollConfig.reversed = button.state == NSOnState;
 }
 
 @end

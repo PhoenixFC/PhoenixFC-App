@@ -12,9 +12,11 @@
 		EF2CF2DC1A827C23003D1AE4 /* NSData+PhoenixFC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */; };
 		EF2CF2DE1A827D02003D1AE4 /* NSData+PhoenixFC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2CF2DD1A827D02003D1AE4 /* NSData+PhoenixFC.m */; };
 		EF487A571A86DFF90007E897 /* RxConfigWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */; };
-		EF487A5A1A87B7150007E897 /* BlueDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A591A87B7150007E897 /* BlueDotView.m */; };
 		EF487A5C1A87BDEC0007E897 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF487A5B1A87BDEC0007E897 /* QuartzCore.framework */; };
 		EF487A901A88D1360007E897 /* TransmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A8F1A88D1360007E897 /* TransmitterView.m */; };
+		EF487A931A88D5590007E897 /* TransmitterStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A921A88D5590007E897 /* TransmitterStickView.m */; };
+		EF487A961A88E8880007E897 /* RxWizardStep.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A951A88E8880007E897 /* RxWizardStep.m */; };
+		EF487A991A88F3C70007E897 /* ChannelConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A981A88F3C70007E897 /* ChannelConfig.m */; };
 		EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA904881A7288EF00D728A8 /* AppDelegate.m */; };
 		EFA9048B1A7288EF00D728A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048A1A7288EF00D728A8 /* main.m */; };
 		EFA9048E1A7288EF00D728A8 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */; };
@@ -47,11 +49,15 @@
 		EF2CF2DD1A827D02003D1AE4 /* NSData+PhoenixFC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PhoenixFC.m"; sourceTree = "<group>"; };
 		EF487A551A86DFF90007E897 /* RxConfigWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxConfigWizardViewController.h; sourceTree = "<group>"; };
 		EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxConfigWizardViewController.m; sourceTree = "<group>"; };
-		EF487A581A87B7150007E897 /* BlueDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueDotView.h; sourceTree = "<group>"; };
-		EF487A591A87B7150007E897 /* BlueDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueDotView.m; sourceTree = "<group>"; };
 		EF487A5B1A87BDEC0007E897 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EF487A8E1A88D1360007E897 /* TransmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterView.h; sourceTree = "<group>"; };
 		EF487A8F1A88D1360007E897 /* TransmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterView.m; sourceTree = "<group>"; };
+		EF487A911A88D5590007E897 /* TransmitterStickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterStickView.h; sourceTree = "<group>"; };
+		EF487A921A88D5590007E897 /* TransmitterStickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterStickView.m; sourceTree = "<group>"; };
+		EF487A941A88E8880007E897 /* RxWizardStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWizardStep.h; sourceTree = "<group>"; };
+		EF487A951A88E8880007E897 /* RxWizardStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWizardStep.m; sourceTree = "<group>"; };
+		EF487A971A88F3C70007E897 /* ChannelConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelConfig.h; sourceTree = "<group>"; };
+		EF487A981A88F3C70007E897 /* ChannelConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelConfig.m; sourceTree = "<group>"; };
 		EFA904821A7288EF00D728A8 /* PhoenixFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA904861A7288EF00D728A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFA904871A7288EF00D728A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,10 +156,14 @@
 				EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */,
 				EF487A551A86DFF90007E897 /* RxConfigWizardViewController.h */,
 				EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */,
-				EF487A581A87B7150007E897 /* BlueDotView.h */,
-				EF487A591A87B7150007E897 /* BlueDotView.m */,
 				EF487A8E1A88D1360007E897 /* TransmitterView.h */,
 				EF487A8F1A88D1360007E897 /* TransmitterView.m */,
+				EF487A911A88D5590007E897 /* TransmitterStickView.h */,
+				EF487A921A88D5590007E897 /* TransmitterStickView.m */,
+				EF487A941A88E8880007E897 /* RxWizardStep.h */,
+				EF487A951A88E8880007E897 /* RxWizardStep.m */,
+				EF487A971A88F3C70007E897 /* ChannelConfig.h */,
+				EF487A981A88F3C70007E897 /* ChannelConfig.m */,
 			);
 			path = PhoenixFC;
 			sourceTree = "<group>";
@@ -353,9 +363,11 @@
 			files = (
 				EF487A901A88D1360007E897 /* TransmitterView.m in Sources */,
 				EFA9048E1A7288EF00D728A8 /* ConsoleViewController.m in Sources */,
+				EF487A961A88E8880007E897 /* RxWizardStep.m in Sources */,
 				EF2CF2DC1A827C23003D1AE4 /* NSData+PhoenixFC.m in Sources */,
-				EF487A5A1A87B7150007E897 /* BlueDotView.m in Sources */,
 				EFA9048B1A7288EF00D728A8 /* main.m in Sources */,
+				EF487A931A88D5590007E897 /* TransmitterStickView.m in Sources */,
+				EF487A991A88F3C70007E897 /* ChannelConfig.m in Sources */,
 				EFFB82A71A7DFDC600F5643A /* FlightController.m in Sources */,
 				EFFB82A41A7DFB2C00F5643A /* TransmitterConfigViewController.m in Sources */,
 				EF487A571A86DFF90007E897 /* RxConfigWizardViewController.m in Sources */,

@@ -827,7 +827,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="HPr-Eg-mX1" kind="show" id="kzX-HU-19a"/>
+                                    <segue destination="HPr-Eg-mX1" kind="modal" id="kzX-HU-19a"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -847,7 +847,7 @@
         <scene sceneID="UB3-iK-ITD">
             <objects>
                 <windowController id="HPr-Eg-mX1" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="hIr-um-XyF">
+                    <window key="window" title="Receiver Configuration Wizard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="hIr-um-XyF">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -866,11 +866,19 @@
             <objects>
                 <viewController id="R9S-2b-zJE" customClass="RxConfigWizardViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="gXD-yh-iZ4">
-                        <rect key="frame" x="0.0" y="0.0" width="545" height="418"/>
+                        <rect key="frame" x="0.0" y="0.0" width="623" height="531"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3N-ah-Nmt">
+                                <rect key="frame" x="18" y="494" width="587" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Step 1: Move your throttle up and down now." id="DiQ-jp-n4V">
+                                    <font key="font" metaFont="systemBold" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IxM-8f-BUc">
-                                <rect key="frame" x="240" y="17" width="64" height="45"/>
+                                <rect key="frame" x="541" y="17" width="64" height="45"/>
                                 <buttonCell key="cell" type="bevel" title="Next" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="luC-bL-2ah">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
@@ -879,39 +887,81 @@
                                     <action selector="nextClicked:" target="R9S-2b-zJE" id="pe7-ip-Iah"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1I-hb-GL5">
-                                <rect key="frame" x="18" y="381" width="204" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Receiver Configuration Wizard" id="SHr-MX-zyX">
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o65-Lv-jaq">
+                                <rect key="frame" x="18" y="17" width="64" height="45"/>
+                                <buttonCell key="cell" type="bevel" title="Prev" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DMb-mN-hR2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="14"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="prevClicked:" target="R9S-2b-zJE" id="Col-bu-HCg"/>
+                                </connections>
+                            </button>
+                            <customView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bi5-BJ-Hfa" customClass="TransmitterView">
+                                <rect key="frame" x="133" y="138" width="356" height="348"/>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Az-pM-8oa">
+                                <rect key="frame" x="247" y="113" width="129" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reverse Channels" id="VkF-YG-yJh">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B5h-Je-FnP">
-                                <rect key="frame" x="129" y="68" width="287" height="280"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Radio" id="3Qp-9g-WBv"/>
-                            </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3N-ah-Nmt">
-                                <rect key="frame" x="18" y="356" width="509" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Step 1: Move your throttle up and down now." id="DiQ-jp-n4V">
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXc-k1-P8R">
+                                <rect key="frame" x="202" y="89" width="77" height="18"/>
+                                <buttonCell key="cell" type="check" title="Throttle" bezelStyle="regularSquare" imagePosition="left" inset="2" id="jlZ-tW-Ioo">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="throttleReverseClicked:" target="R9S-2b-zJE" id="JuI-Zd-YER"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpA-rM-m9h">
+                                <rect key="frame" x="202" y="69" width="77" height="18"/>
+                                <buttonCell key="cell" type="check" title="Yaw" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Vgn-aw-eXG">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="yawReverseClicked:" target="R9S-2b-zJE" id="dvD-Fj-vsN"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zx8-13-JFP">
+                                <rect key="frame" x="344" y="89" width="77" height="18"/>
+                                <buttonCell key="cell" type="check" title="Pitch" bezelStyle="regularSquare" imagePosition="left" inset="2" id="mpL-YB-MzM">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="pitchReverseClicked:" target="R9S-2b-zJE" id="0r2-Nx-FYk"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gul-OZ-yqb">
+                                <rect key="frame" x="344" y="69" width="77" height="18"/>
+                                <buttonCell key="cell" type="check" title="Roll" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tvS-Sp-EfR">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="rollReverseClicked:" target="R9S-2b-zJE" id="UGt-gR-YGb"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="B5h-Je-FnP" id="Bhn-gk-uH4"/>
                         <outlet property="label" destination="D3N-ah-Nmt" id="YB9-hK-de9"/>
+                        <outlet property="pitchReverse" destination="zx8-13-JFP" id="H0e-ik-YcN"/>
+                        <outlet property="rollReverse" destination="Gul-OZ-yqb" id="kqF-lS-GLU"/>
+                        <outlet property="throttleReverse" destination="LXc-k1-P8R" id="Mll-8O-W7N"/>
+                        <outlet property="transmitterView" destination="Bi5-BJ-Hfa" id="EzE-t5-I1t"/>
+                        <outlet property="yawReverse" destination="rpA-rM-m9h" id="HyL-94-NTg"/>
                     </connections>
                 </viewController>
                 <customObject id="kG6-7B-CgU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076.5" y="579"/>
+            <point key="canvasLocation" x="2115.5" y="635.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Radio" width="284.79998779296875" height="278.39999389648438"/>
-    </resources>
 </document>
