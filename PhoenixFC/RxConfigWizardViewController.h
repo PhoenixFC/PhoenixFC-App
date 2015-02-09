@@ -13,6 +13,9 @@
 
 @property (weak) FlightController *flightController;
 
+@property (assign) IBOutlet NSImageView *imageView;
+@property (assign) IBOutlet NSTextField *label;
+
 - (IBAction)nextClicked:(id)sender;
 
 @end

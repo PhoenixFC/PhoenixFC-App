@@ -8,6 +8,7 @@
 
 #import "TransmitterConfigViewController.h"
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TransmitterConfigViewController ()
 @property (strong) NSTimer *rxUpdateTimer;

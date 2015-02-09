@@ -827,7 +827,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="HPr-Eg-mX1" kind="modal" id="kzX-HU-19a"/>
+                                    <segue destination="HPr-Eg-mX1" kind="show" id="kzX-HU-19a"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -865,12 +865,12 @@
         <scene sceneID="i6d-Hs-eSk">
             <objects>
                 <viewController id="R9S-2b-zJE" customClass="RxConfigWizardViewController" sceneMemberID="viewController">
-                    <view key="view" id="gXD-yh-iZ4">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                    <view key="view" wantsLayer="YES" id="gXD-yh-iZ4">
+                        <rect key="frame" x="0.0" y="0.0" width="545" height="418"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IxM-8f-BUc">
-                                <rect key="frame" x="208" y="17" width="64" height="45"/>
+                                <rect key="frame" x="240" y="17" width="64" height="45"/>
                                 <buttonCell key="cell" type="bevel" title="Next" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="luC-bL-2ah">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
@@ -880,16 +880,20 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1I-hb-GL5">
-                                <rect key="frame" x="20" y="233" width="204" height="17"/>
+                                <rect key="frame" x="18" y="381" width="204" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Receiver Configuration Wizard" id="SHr-MX-zyX">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B5h-Je-FnP">
+                                <rect key="frame" x="129" y="68" width="287" height="280"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Radio" id="3Qp-9g-WBv"/>
+                            </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3N-ah-Nmt">
-                                <rect key="frame" x="99" y="127" width="282" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Step 1: Move your throttle up and down now." id="DiQ-jp-n4V">
+                                <rect key="frame" x="18" y="356" width="509" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Step 1: Move your throttle up and down now." id="DiQ-jp-n4V">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -897,10 +901,17 @@
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="B5h-Je-FnP" id="Bhn-gk-uH4"/>
+                        <outlet property="label" destination="D3N-ah-Nmt" id="YB9-hK-de9"/>
+                    </connections>
                 </viewController>
                 <customObject id="kG6-7B-CgU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="505"/>
+            <point key="canvasLocation" x="2076.5" y="579"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Radio" width="284.79998779296875" height="278.39999389648438"/>
+    </resources>
 </document>
