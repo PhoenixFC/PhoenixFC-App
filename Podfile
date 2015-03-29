@@ -1,9 +1,9 @@
 target :PhoenixFC do
-  pod 'ORSSerialPort', '~> 1.5.1'
+  pod 'ORSSerialPort', '~> 1.5.4'
 end
 
 target :PhoenixFCTests do
-  pod 'Expecta', '~> 0.3.1'
-  pod 'Specta',  :git => 'https://github.com/specta/specta.git', :tag => 'v0.3.0.beta1'
+  pod 'Expecta', '~> 0.3.2'
+  pod 'Specta',  '~> 0.3.2'
   pod 'OCMock',  '~> 3.1.2'  
 end
