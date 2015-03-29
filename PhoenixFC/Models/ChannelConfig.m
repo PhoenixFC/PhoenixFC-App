@@ -10,23 +10,10 @@
 
 @implementation ChannelConfig
 
-@synthesize minValue;
-@synthesize maxValue;
-@synthesize reversed;
-@synthesize channel;
+@synthesize type, minValue, maxValue, reversed, channel;
 
 - (id)init {
     if( self = [super init] ) { }
-    return self;
-}
-
-- (id)initForChannel:(int)aChannel withMin:(NSInteger)aMinValue andMax:(NSInteger)aMaxValue {
-    if( self = [super init] ) {
-        self.channel = aChannel;
-        self.minValue = aMinValue;
-        self.maxValue = aMaxValue;
-        self.reversed = NO;
-    }
     return self;
 }
 
@@ -69,6 +56,5 @@
 - (NSString *)toString {
     return [NSString stringWithFormat:@"Min: %lu, Max: %lu, Channel: %d", minValue, maxValue, channel];
 }
-
 
 @end

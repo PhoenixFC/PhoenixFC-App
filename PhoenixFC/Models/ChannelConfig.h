@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "FlightController.h"
+#import "ChannelType.h"
 
 @interface ChannelConfig : NSObject
 
+@property (assign) ChannelType type;
 @property (assign) NSInteger minValue;
 @property (assign) NSInteger maxValue;
 @property (assign) BOOL reversed;
 @property (assign) int channel;
 
 - (id)init;
-- (id)initForChannel:(int)aChannel withMin:(NSInteger)aMinValue andMax:(NSInteger)aMaxValue;
 
 - (NSInteger)convertRawValue:(NSInteger)rawValue;
+
 - (NSInteger)valueFromPacket:(RxPacket)packet;
 
 - (NSString *)toString;

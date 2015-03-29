@@ -1,11 +1,3 @@
-//
-//  TransmitterView.m
-//  PhoenixFC
-//
-//  Created by Colin Harris on 9/2/15.
-//  Copyright (c) 2015 Colin Harris. All rights reserved.
-//
-
 #import "TransmitterView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "TransmitterStickView.h"
@@ -47,7 +39,7 @@
 #pragma mark - General stick measurements
 
 - (float)stickMidY {
-    return self.frame.size.height / 2.35;
+    return (float) (self.frame.size.height / 2.35);
 }
 
 - (float)stickMaxY {
@@ -59,17 +51,17 @@
 }
 
 - (float)stickMoveX {
-    return self.frame.size.width / 10.18;
+    return (float) (self.frame.size.width / 10.18);
 }
 
 - (float)stickMoveY {
-    return self.frame.size.height / 9.95;
+    return (float) (self.frame.size.height / 9.95);
 }
 
 #pragma mark - Left Stick - Relative Measurements
 
 - (float)leftStickMidX {
-    return self.frame.size.width / 4.139;
+    return (float) (self.frame.size.width / 4.139);
 }
 
 - (float)leftStickMaxX {
@@ -83,7 +75,7 @@
 #pragma mark - Right Stick - Relative Measurements
 
 - (float)rightStickMidX {
-    return self.frame.size.width / 1.35;
+    return (float) (self.frame.size.width / 1.35);
 }
 
 - (float)rightStickMaxX {

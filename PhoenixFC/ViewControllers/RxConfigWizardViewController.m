@@ -90,6 +90,7 @@
         NSLog(@"Yaw: %@", [yawConfig toString]);
         NSLog(@"Pitch: %@", [pitchConfig toString]);
         NSLog(@"Roll: %@", [rollConfig toString]);
+        NSLog(@"");
     }
 }
 
@@ -188,6 +189,14 @@
 
 - (void)flightControllerDidReceiveRawRxPacket:(RxPacket)packet {
     if( currentStep != [steps lastObject] ) {
+        NSLog(@"CH1%4ld,CH2%4ld,CH3%4ld,CH4%4ld,CH5%4ld,CH6%4ld;",
+              (long)packet.channel1,
+              (long)packet.channel2,
+              (long)packet.channel3,
+              (long)packet.channel4,
+              (long)packet.channel5,
+              (long)packet.channel6
+              );
         [self updateMinChannelValues:packet];
         [self updateMaxChannelValues:packet];
     } else {

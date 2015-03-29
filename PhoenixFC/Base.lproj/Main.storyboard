@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7525"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -644,17 +644,36 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="84" y="-63"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="PhoenixFC" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="MainWindowController" sceneMemberID="viewController">
+                    <window key="window" title="PhoenixFC" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="300"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="555D27F4-0DA5-48C2-BDC5-58C3BB9EFB18" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="TWZ-Gz-nvb">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="c13-2w-qNz"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="ZFu-XV-IGK"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="v9B-7d-cXz"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="sie-ab-WhG"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="IGa-BF-coM"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSeparatorItem" id="jHm-Tk-Olz"/>
+                                <toolbarItem implicitItemIdentifier="E4EFCB5F-6D25-4EF2-AE8A-2B1833F59CC9" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" id="Anf-4X-LgY"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="Anf-4X-LgY"/>
+                                <toolbarItem reference="c13-2w-qNz"/>
+                                <toolbarItem reference="jHm-Tk-Olz"/>
+                                <toolbarItem reference="ZFu-XV-IGK"/>
+                                <toolbarItem reference="IGa-BF-coM"/>
+                                <toolbarItem reference="v9B-7d-cXz"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
                         <segue destination="tMb-pp-O34" kind="relationship" relationship="window.shadowedContentViewController" id="4jP-H9-ydu"/>
@@ -736,10 +755,11 @@
         <!--Tab View Controller-->
         <scene sceneID="Uru-57-qxX">
             <objects>
-                <tabViewController selectedTabViewItemIndex="0" id="tMb-pp-O34" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="2" id="tMb-pp-O34" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem identifier="" id="T9B-D3-23V"/>
                         <tabViewItem id="h6z-WH-Bim"/>
+                        <tabViewItem label="Sensors" id="kg2-vR-Wdo"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="pZ9-rk-py8">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -750,11 +770,48 @@
                     <connections>
                         <segue destination="Yx2-fz-N8s" kind="relationship" relationship="tabItems" id="6DT-cw-mcu"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="tabItems" id="Dic-4H-zyD"/>
+                        <segue destination="B3i-1n-XC0" kind="relationship" relationship="tabItems" id="NQE-Ke-Dho"/>
                     </connections>
                 </tabViewController>
                 <customObject id="Nkd-p2-1m6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="727"/>
+            <point key="canvasLocation" x="78" y="751"/>
+        </scene>
+        <!--Sensors View Controller-->
+        <scene sceneID="GFv-UO-ngi">
+            <objects>
+                <viewController id="B3i-1n-XC0" customClass="SensorsViewController" sceneMemberID="viewController">
+                    <view key="view" id="Reg-b6-UEs">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="8d9-Tp-9cs" customClass="SensorGraphView">
+                                <rect key="frame" x="20" y="45" width="410" height="235"/>
+                            </customView>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yc8-SV-rW3">
+                                <rect key="frame" x="18" y="18" width="414" height="21"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="-180" maxValue="180" tickMarkPosition="above" sliderType="linear" id="xVV-Jb-Yjh"/>
+                            </slider>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8d9-Tp-9cs" secondAttribute="trailing" constant="20" symbolic="YES" id="CAk-w7-1ET"/>
+                            <constraint firstItem="8d9-Tp-9cs" firstAttribute="leading" secondItem="Reg-b6-UEs" secondAttribute="leading" constant="20" symbolic="YES" id="OP8-wL-ImD"/>
+                            <constraint firstAttribute="bottom" secondItem="8d9-Tp-9cs" secondAttribute="bottom" constant="45" id="WoE-Dd-pZH"/>
+                            <constraint firstItem="yc8-SV-rW3" firstAttribute="leading" secondItem="8d9-Tp-9cs" secondAttribute="leading" id="ap8-aa-piN"/>
+                            <constraint firstItem="8d9-Tp-9cs" firstAttribute="top" secondItem="Reg-b6-UEs" secondAttribute="top" constant="20" symbolic="YES" id="lur-BN-SkX"/>
+                            <constraint firstAttribute="bottom" secondItem="yc8-SV-rW3" secondAttribute="bottom" constant="20" symbolic="YES" id="p8u-Th-ReZ"/>
+                            <constraint firstItem="yc8-SV-rW3" firstAttribute="top" secondItem="8d9-Tp-9cs" secondAttribute="bottom" constant="8" symbolic="YES" id="tHH-EI-QmG"/>
+                            <constraint firstItem="yc8-SV-rW3" firstAttribute="trailing" secondItem="8d9-Tp-9cs" secondAttribute="trailing" id="wb0-wx-DUU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fakeDataSlider" destination="yc8-SV-rW3" id="YmP-uw-Msb"/>
+                        <outlet property="sensorGraph" destination="8d9-Tp-9cs" id="tH9-xG-GhG"/>
+                    </connections>
+                </viewController>
+                <customObject id="yan-4e-1Rf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="196" y="1158"/>
         </scene>
         <!--Tx Config-->
         <scene sceneID="A2Y-Kj-xgl">

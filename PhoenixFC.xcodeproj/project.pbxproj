@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10960073710D5D255651294F /* RxWizardStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 10960CE67368ABC44C89550F /* RxWizardStep.m */; };
+		1096027E3819BC94A7A72F54 /* FCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 109603ACA6FB880212A7E8F1 /* FCConfiguration.m */; };
+		1096055632981A4ADA8D332D /* RxConfigWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1096069B413A0A8F595CC15A /* RxConfigWizardViewController.m */; };
+		109606EBA67875E0667A78D7 /* NSData+PhoenixFC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1096031E1C69DF657B909C78 /* NSData+PhoenixFC.m */; };
+		10960732C5B88F8EC8ED141C /* TransmitterConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1096050BC8DAF9119BA5EFAE /* TransmitterConfigViewController.m */; };
+		10960802E8A3E8979FE5C48E /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 109601222431E0766D238497 /* ConsoleViewController.m */; };
+		1096097F1686CA9E2169EC1A /* TransmitterStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10960C0D89D83671EC35F8A2 /* TransmitterStickView.m */; };
+		10960AD90B471D6924E733AF /* TransmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1096034EDFB41E3E0E95E7F5 /* TransmitterView.m */; };
+		10960DF77C138CCB946A4632 /* ChannelConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 109602F21B9BFD175D10AEDF /* ChannelConfig.m */; };
+		10960FAE8B4765336963C926 /* ChannelType.m in Sources */ = {isa = PBXBuildFile; fileRef = 10960BA82ACC8627F0DAE1B6 /* ChannelType.m */; };
 		9E0A998B98F4E3337FC75812 /* libPods-PhoenixFC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FE3870D063E93317CDCE43 /* libPods-PhoenixFC.a */; };
 		A0329110D27DED4E27232607 /* libPods-PhoenixFCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF33E7EAAAAB67F9716E57E /* libPods-PhoenixFCTests.a */; };
-		EF2CF2DC1A827C23003D1AE4 /* NSData+PhoenixFC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */; };
+		EF2485161AA75D240045438C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2485151AA75D240045438C /* MainWindowController.m */; };
 		EF2CF2DE1A827D02003D1AE4 /* NSData+PhoenixFC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2CF2DD1A827D02003D1AE4 /* NSData+PhoenixFC.m */; };
-		EF487A571A86DFF90007E897 /* RxConfigWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */; };
 		EF487A5C1A87BDEC0007E897 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF487A5B1A87BDEC0007E897 /* QuartzCore.framework */; };
-		EF487A901A88D1360007E897 /* TransmitterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A8F1A88D1360007E897 /* TransmitterView.m */; };
-		EF487A931A88D5590007E897 /* TransmitterStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A921A88D5590007E897 /* TransmitterStickView.m */; };
-		EF487A961A88E8880007E897 /* RxWizardStep.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A951A88E8880007E897 /* RxWizardStep.m */; };
-		EF487A991A88F3C70007E897 /* ChannelConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EF487A981A88F3C70007E897 /* ChannelConfig.m */; };
+		EF5BDC941AC7B71A000EA960 /* SensorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5BDC931AC7B71A000EA960 /* SensorsViewController.m */; };
+		EF5BDC971AC7B826000EA960 /* SensorGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5BDC961AC7B826000EA960 /* SensorGraphView.m */; };
 		EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA904881A7288EF00D728A8 /* AppDelegate.m */; };
 		EFA9048B1A7288EF00D728A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048A1A7288EF00D728A8 /* main.m */; };
-		EFA9048E1A7288EF00D728A8 /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */; };
 		EFA904901A7288EF00D728A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA9048F1A7288EF00D728A8 /* Images.xcassets */; };
 		EFA904931A7288EF00D728A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA904911A7288EF00D728A8 /* Main.storyboard */; };
 		EFA9049F1A7288EF00D728A8 /* FlightControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9049E1A7288EF00D728A8 /* FlightControllerSpec.m */; };
-		EFFB82A41A7DFB2C00F5643A /* TransmitterConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFB82A31A7DFB2C00F5643A /* TransmitterConfigViewController.m */; };
 		EFFB82A71A7DFDC600F5643A /* FlightController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFFB82A61A7DFDC600F5643A /* FlightController.m */; };
 /* End PBXBuildFile section */
 
@@ -38,40 +43,50 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1096003F9121806282095B8E /* ChannelType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelType.h; sourceTree = "<group>"; };
+		1096005AAD699DA1019E95FB /* ChannelConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelConfig.h; sourceTree = "<group>"; };
+		10960103FB7405CF30EC9FCD /* ConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
+		109601222431E0766D238497 /* ConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
+		109601A76A49FE813AC561DC /* RxConfigWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxConfigWizardViewController.h; sourceTree = "<group>"; };
+		109602F21B9BFD175D10AEDF /* ChannelConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelConfig.m; sourceTree = "<group>"; };
+		1096031E1C69DF657B909C78 /* NSData+PhoenixFC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PhoenixFC.m"; sourceTree = "<group>"; };
+		1096034EDFB41E3E0E95E7F5 /* TransmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterView.m; sourceTree = "<group>"; };
+		109603ACA6FB880212A7E8F1 /* FCConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCConfiguration.m; sourceTree = "<group>"; };
+		1096050BC8DAF9119BA5EFAE /* TransmitterConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterConfigViewController.m; sourceTree = "<group>"; };
+		109605A294FA03BBE48826D1 /* NSData+PhoenixFC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PhoenixFC.h"; sourceTree = "<group>"; };
+		1096069B413A0A8F595CC15A /* RxConfigWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxConfigWizardViewController.m; sourceTree = "<group>"; };
+		109606A41F3B31544D0A4B1C /* TransmitterStickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterStickView.h; sourceTree = "<group>"; };
+		10960BA82ACC8627F0DAE1B6 /* ChannelType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelType.m; sourceTree = "<group>"; };
+		10960C0D89D83671EC35F8A2 /* TransmitterStickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterStickView.m; sourceTree = "<group>"; };
+		10960C1F5701CA97474232EE /* TransmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterView.h; sourceTree = "<group>"; };
+		10960C4592B0C06891068DAD /* FCConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCConfiguration.h; sourceTree = "<group>"; };
+		10960CE67368ABC44C89550F /* RxWizardStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWizardStep.m; sourceTree = "<group>"; };
+		10960D96AFB0D96EDAE2013A /* TransmitterConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterConfigViewController.h; sourceTree = "<group>"; };
+		10960F9523D61E52DFE0F2D2 /* RxWizardStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWizardStep.h; sourceTree = "<group>"; };
 		441B3AA93F534091A8542EFB /* Pods-PhoenixFC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoenixFC.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhoenixFC/Pods-PhoenixFC.release.xcconfig"; sourceTree = "<group>"; };
 		5FF33E7EAAAAB67F9716E57E /* libPods-PhoenixFCTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhoenixFCTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E51FE7182D21617E5E0C8E6 /* Pods-PhoenixFC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoenixFC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhoenixFC/Pods-PhoenixFC.debug.xcconfig"; sourceTree = "<group>"; };
 		820B668F8B76B17EE1D9995F /* Pods-PhoenixFCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoenixFCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhoenixFCTests/Pods-PhoenixFCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9FE3870D063E93317CDCE43 /* libPods-PhoenixFC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhoenixFC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C2E76BCA9FB591E88EA487 /* Pods-PhoenixFCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoenixFCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhoenixFCTests/Pods-PhoenixFCTests.release.xcconfig"; sourceTree = "<group>"; };
-		EF2CF2DA1A827C23003D1AE4 /* NSData+PhoenixFC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+PhoenixFC.h"; sourceTree = "<group>"; };
-		EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PhoenixFC.m"; sourceTree = "<group>"; };
+		EF2485141AA75D240045438C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		EF2485151AA75D240045438C /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		EF2CF2DD1A827D02003D1AE4 /* NSData+PhoenixFC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+PhoenixFC.m"; sourceTree = "<group>"; };
-		EF487A551A86DFF90007E897 /* RxConfigWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxConfigWizardViewController.h; sourceTree = "<group>"; };
-		EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxConfigWizardViewController.m; sourceTree = "<group>"; };
 		EF487A5B1A87BDEC0007E897 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		EF487A8E1A88D1360007E897 /* TransmitterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterView.h; sourceTree = "<group>"; };
-		EF487A8F1A88D1360007E897 /* TransmitterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterView.m; sourceTree = "<group>"; };
-		EF487A911A88D5590007E897 /* TransmitterStickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterStickView.h; sourceTree = "<group>"; };
-		EF487A921A88D5590007E897 /* TransmitterStickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterStickView.m; sourceTree = "<group>"; };
-		EF487A941A88E8880007E897 /* RxWizardStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWizardStep.h; sourceTree = "<group>"; };
-		EF487A951A88E8880007E897 /* RxWizardStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWizardStep.m; sourceTree = "<group>"; };
-		EF487A971A88F3C70007E897 /* ChannelConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelConfig.h; sourceTree = "<group>"; };
-		EF487A981A88F3C70007E897 /* ChannelConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelConfig.m; sourceTree = "<group>"; };
+		EF5BDC921AC7B71A000EA960 /* SensorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorsViewController.h; sourceTree = "<group>"; };
+		EF5BDC931AC7B71A000EA960 /* SensorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorsViewController.m; sourceTree = "<group>"; };
+		EF5BDC951AC7B826000EA960 /* SensorGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorGraphView.h; sourceTree = "<group>"; };
+		EF5BDC961AC7B826000EA960 /* SensorGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorGraphView.m; sourceTree = "<group>"; };
 		EFA904821A7288EF00D728A8 /* PhoenixFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA904861A7288EF00D728A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFA904871A7288EF00D728A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EFA904881A7288EF00D728A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EFA9048A1A7288EF00D728A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EFA9048C1A7288EF00D728A8 /* ConsoleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
-		EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
 		EFA9048F1A7288EF00D728A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EFA904921A7288EF00D728A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFA904981A7288EF00D728A8 /* PhoenixFCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoenixFCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA9049D1A7288EF00D728A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFA9049E1A7288EF00D728A8 /* FlightControllerSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightControllerSpec.m; sourceTree = "<group>"; };
-		EFFB82A21A7DFB2C00F5643A /* TransmitterConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitterConfigViewController.h; sourceTree = "<group>"; };
-		EFFB82A31A7DFB2C00F5643A /* TransmitterConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitterConfigViewController.m; sourceTree = "<group>"; };
 		EFFB82A51A7DFDC600F5643A /* FlightController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightController.h; sourceTree = "<group>"; };
 		EFFB82A61A7DFDC600F5643A /* FlightController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +112,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		109600C38D0AE4D8B2B22335 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				109606A41F3B31544D0A4B1C /* TransmitterStickView.h */,
+				10960C0D89D83671EC35F8A2 /* TransmitterStickView.m */,
+				1096034EDFB41E3E0E95E7F5 /* TransmitterView.m */,
+				10960C1F5701CA97474232EE /* TransmitterView.h */,
+				EF5BDC951AC7B826000EA960 /* SensorGraphView.h */,
+				EF5BDC961AC7B826000EA960 /* SensorGraphView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		109601F0367D7383956F5889 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1096031E1C69DF657B909C78 /* NSData+PhoenixFC.m */,
+				109605A294FA03BBE48826D1 /* NSData+PhoenixFC.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		109602C77DA8CFD61A0076C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				109601A76A49FE813AC561DC /* RxConfigWizardViewController.h */,
+				1096069B413A0A8F595CC15A /* RxConfigWizardViewController.m */,
+				10960D96AFB0D96EDAE2013A /* TransmitterConfigViewController.h */,
+				10960103FB7405CF30EC9FCD /* ConsoleViewController.h */,
+				1096050BC8DAF9119BA5EFAE /* TransmitterConfigViewController.m */,
+				109601222431E0766D238497 /* ConsoleViewController.m */,
+				EF5BDC921AC7B71A000EA960 /* SensorsViewController.h */,
+				EF5BDC931AC7B71A000EA960 /* SensorsViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		10960BD3285A07D5D0EC84AA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				109603ACA6FB880212A7E8F1 /* FCConfiguration.m */,
+				10960C4592B0C06891068DAD /* FCConfiguration.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		10960F87860E1E78BB77F566 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1096005AAD699DA1019E95FB /* ChannelConfig.h */,
+				109602F21B9BFD175D10AEDF /* ChannelConfig.m */,
+				10960CE67368ABC44C89550F /* RxWizardStep.m */,
+				10960F9523D61E52DFE0F2D2 /* RxWizardStep.h */,
+				10960BA82ACC8627F0DAE1B6 /* ChannelType.m */,
+				1096003F9121806282095B8E /* ChannelType.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		36E7E5A77959346F4A6A5ACA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,27 +217,18 @@
 			children = (
 				EFA904871A7288EF00D728A8 /* AppDelegate.h */,
 				EFA904881A7288EF00D728A8 /* AppDelegate.m */,
-				EFA9048C1A7288EF00D728A8 /* ConsoleViewController.h */,
-				EFA9048D1A7288EF00D728A8 /* ConsoleViewController.m */,
 				EFA9048F1A7288EF00D728A8 /* Images.xcassets */,
 				EFA904911A7288EF00D728A8 /* Main.storyboard */,
 				EFA904851A7288EF00D728A8 /* Supporting Files */,
-				EFFB82A21A7DFB2C00F5643A /* TransmitterConfigViewController.h */,
-				EFFB82A31A7DFB2C00F5643A /* TransmitterConfigViewController.m */,
 				EFFB82A51A7DFDC600F5643A /* FlightController.h */,
 				EFFB82A61A7DFDC600F5643A /* FlightController.m */,
-				EF2CF2DA1A827C23003D1AE4 /* NSData+PhoenixFC.h */,
-				EF2CF2DB1A827C23003D1AE4 /* NSData+PhoenixFC.m */,
-				EF487A551A86DFF90007E897 /* RxConfigWizardViewController.h */,
-				EF487A561A86DFF90007E897 /* RxConfigWizardViewController.m */,
-				EF487A8E1A88D1360007E897 /* TransmitterView.h */,
-				EF487A8F1A88D1360007E897 /* TransmitterView.m */,
-				EF487A911A88D5590007E897 /* TransmitterStickView.h */,
-				EF487A921A88D5590007E897 /* TransmitterStickView.m */,
-				EF487A941A88E8880007E897 /* RxWizardStep.h */,
-				EF487A951A88E8880007E897 /* RxWizardStep.m */,
-				EF487A971A88F3C70007E897 /* ChannelConfig.h */,
-				EF487A981A88F3C70007E897 /* ChannelConfig.m */,
+				109600C38D0AE4D8B2B22335 /* Views */,
+				109601F0367D7383956F5889 /* Categories */,
+				10960F87860E1E78BB77F566 /* Models */,
+				109602C77DA8CFD61A0076C0 /* ViewControllers */,
+				10960BD3285A07D5D0EC84AA /* Services */,
+				EF2485141AA75D240045438C /* MainWindowController.h */,
+				EF2485151AA75D240045438C /* MainWindowController.m */,
 			);
 			path = PhoenixFC;
 			sourceTree = "<group>";
@@ -361,17 +426,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF487A901A88D1360007E897 /* TransmitterView.m in Sources */,
-				EFA9048E1A7288EF00D728A8 /* ConsoleViewController.m in Sources */,
-				EF487A961A88E8880007E897 /* RxWizardStep.m in Sources */,
-				EF2CF2DC1A827C23003D1AE4 /* NSData+PhoenixFC.m in Sources */,
+				EF5BDC941AC7B71A000EA960 /* SensorsViewController.m in Sources */,
 				EFA9048B1A7288EF00D728A8 /* main.m in Sources */,
-				EF487A931A88D5590007E897 /* TransmitterStickView.m in Sources */,
-				EF487A991A88F3C70007E897 /* ChannelConfig.m in Sources */,
 				EFFB82A71A7DFDC600F5643A /* FlightController.m in Sources */,
-				EFFB82A41A7DFB2C00F5643A /* TransmitterConfigViewController.m in Sources */,
-				EF487A571A86DFF90007E897 /* RxConfigWizardViewController.m in Sources */,
+				EF5BDC971AC7B826000EA960 /* SensorGraphView.m in Sources */,
 				EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */,
+				1096097F1686CA9E2169EC1A /* TransmitterStickView.m in Sources */,
+				10960AD90B471D6924E733AF /* TransmitterView.m in Sources */,
+				109606EBA67875E0667A78D7 /* NSData+PhoenixFC.m in Sources */,
+				10960DF77C138CCB946A4632 /* ChannelConfig.m in Sources */,
+				10960073710D5D255651294F /* RxWizardStep.m in Sources */,
+				1096055632981A4ADA8D332D /* RxConfigWizardViewController.m in Sources */,
+				10960732C5B88F8EC8ED141C /* TransmitterConfigViewController.m in Sources */,
+				EF2485161AA75D240045438C /* MainWindowController.m in Sources */,
+				10960802E8A3E8979FE5C48E /* ConsoleViewController.m in Sources */,
+				1096027E3819BC94A7A72F54 /* FCConfiguration.m in Sources */,
+				10960FAE8B4765336963C926 /* ChannelType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -508,6 +579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

@@ -17,7 +17,7 @@
 @synthesize flightController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
+
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
