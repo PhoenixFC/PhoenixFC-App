@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7525"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -657,21 +657,29 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="555D27F4-0DA5-48C2-BDC5-58C3BB9EFB18" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="TWZ-Gz-nvb">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="c13-2w-qNz"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="ZFu-XV-IGK"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="v9B-7d-cXz"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="sie-ab-WhG"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="IGa-BF-coM"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSeparatorItem" id="jHm-Tk-Olz"/>
-                                <toolbarItem implicitItemIdentifier="E4EFCB5F-6D25-4EF2-AE8A-2B1833F59CC9" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" id="Anf-4X-LgY"/>
+                                <toolbarItem implicitItemIdentifier="008E5653-B823-4CDE-BBCA-83852D8EA793" label="Connect" paletteLabel="Connect" image="ConnectIconTemplate" id="kjB-fY-Dxt" userLabel="Connect">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="50" height="25"/>
+                                    <size key="maxSize" width="50" height="50"/>
+                                    <button key="view" id="ND3-2b-weB">
+                                        <rect key="frame" x="1" y="14" width="50" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ConnectIconTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="chs-0Q-oN8">
+                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="toggle:" target="B8D-0N-5wS" id="iss-it-aB5"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="Anf-4X-LgY"/>
-                                <toolbarItem reference="c13-2w-qNz"/>
-                                <toolbarItem reference="jHm-Tk-Olz"/>
-                                <toolbarItem reference="ZFu-XV-IGK"/>
                                 <toolbarItem reference="IGa-BF-coM"/>
-                                <toolbarItem reference="v9B-7d-cXz"/>
+                                <toolbarItem reference="kjB-fY-Dxt"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -791,11 +799,11 @@
                                 <rect key="frame" x="20" y="80" width="200" height="200"/>
                             </customView>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="owb-V3-MoS">
-                                <rect key="frame" x="18" y="53" width="204" height="21"/>
+                                <rect key="frame" x="18" y="53" width="204" height="20"/>
                                 <sliderCell key="cell" state="on" alignment="left" minValue="-180" maxValue="180" tickMarkPosition="above" sliderType="linear" id="Dnm-Ro-aKo"/>
                             </slider>
                             <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1P2-O9-FEq">
-                                <rect key="frame" x="226" y="77" width="21" height="205"/>
+                                <rect key="frame" x="226" y="77" width="20" height="205"/>
                                 <sliderCell key="cell" alignment="left" minValue="-180" maxValue="180" tickMarkPosition="right" sliderType="linear" id="Q4Q-Wk-qc1"/>
                             </slider>
                         </subviews>
@@ -844,7 +852,7 @@
                 </viewController>
                 <customObject id="yan-4e-1Rf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="1158"/>
+            <point key="canvasLocation" x="196" y="1206"/>
         </scene>
         <!--Tx Config-->
         <scene sceneID="A2Y-Kj-xgl">
@@ -1054,4 +1062,7 @@
             <point key="canvasLocation" x="2115.5" y="635.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConnectIconTemplate" width="28" height="14"/>
+    </resources>
 </document>

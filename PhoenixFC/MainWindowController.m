@@ -17,7 +17,11 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    self.window.titleVisibility = NO;
+    self.window.titleVisibility = NSWindowTitleVisible;
+}
+
+- (IBAction)toggle:(id)sender {
+    NSLog(@"toggle clicked!");
 }
 
 @end

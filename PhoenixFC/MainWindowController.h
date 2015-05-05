@@ -10,4 +10,6 @@
 
 @interface MainWindowController : NSWindowController
 
+- (IBAction)toggle:(id)sender;
+
 @end
