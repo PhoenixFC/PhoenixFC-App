@@ -755,11 +755,12 @@
         <!--Tab View Controller-->
         <scene sceneID="Uru-57-qxX">
             <objects>
-                <tabViewController selectedTabViewItemIndex="2" id="tMb-pp-O34" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" id="tMb-pp-O34" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem identifier="" id="T9B-D3-23V"/>
                         <tabViewItem id="h6z-WH-Bim"/>
                         <tabViewItem label="Sensors" id="kg2-vR-Wdo"/>
+                        <tabViewItem id="cQO-6d-r9P"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="pZ9-rk-py8">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -771,11 +772,43 @@
                         <segue destination="Yx2-fz-N8s" kind="relationship" relationship="tabItems" id="6DT-cw-mcu"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="tabItems" id="Dic-4H-zyD"/>
                         <segue destination="B3i-1n-XC0" kind="relationship" relationship="tabItems" id="NQE-Ke-Dho"/>
+                        <segue destination="X2y-Jb-uJU" kind="relationship" relationship="tabItems" id="V2f-hc-6ZC"/>
                     </connections>
                 </tabViewController>
                 <customObject id="Nkd-p2-1m6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78" y="751"/>
+        </scene>
+        <!--Guages View Controller-->
+        <scene sceneID="cBI-vV-gap">
+            <objects>
+                <viewController id="X2y-Jb-uJU" customClass="GuagesViewController" sceneMemberID="viewController">
+                    <view key="view" id="VZF-Gg-LLy">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFl-SY-17M" customClass="HorizonGuageView">
+                                <rect key="frame" x="20" y="80" width="200" height="200"/>
+                            </customView>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="owb-V3-MoS">
+                                <rect key="frame" x="18" y="53" width="204" height="21"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="-180" maxValue="180" tickMarkPosition="above" sliderType="linear" id="Dnm-Ro-aKo"/>
+                            </slider>
+                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1P2-O9-FEq">
+                                <rect key="frame" x="226" y="77" width="21" height="205"/>
+                                <sliderCell key="cell" alignment="left" minValue="-180" maxValue="180" tickMarkPosition="right" sliderType="linear" id="Q4Q-Wk-qc1"/>
+                            </slider>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="horizonGuage" destination="aFl-SY-17M" id="caY-M3-v8j"/>
+                        <outlet property="pitchSlider" destination="1P2-O9-FEq" id="Bgn-UP-JCv"/>
+                        <outlet property="rollSlider" destination="owb-V3-MoS" id="Gil-F7-KOV"/>
+                    </connections>
+                </viewController>
+                <customObject id="Qlf-T8-zx2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-337" y="1206"/>
         </scene>
         <!--Sensors View Controller-->
         <scene sceneID="GFv-UO-ngi">

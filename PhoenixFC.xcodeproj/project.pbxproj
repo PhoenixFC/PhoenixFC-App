@@ -24,6 +24,9 @@
 		EF487A5C1A87BDEC0007E897 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF487A5B1A87BDEC0007E897 /* QuartzCore.framework */; };
 		EF5BDC941AC7B71A000EA960 /* SensorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5BDC931AC7B71A000EA960 /* SensorsViewController.m */; };
 		EF5BDC971AC7B826000EA960 /* SensorGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5BDC961AC7B826000EA960 /* SensorGraphView.m */; };
+		EF5BDC9D1AC84040000EA960 /* GuagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5BDC9C1AC84040000EA960 /* GuagesViewController.m */; };
+		EF5BDCA01AC84060000EA960 /* HorizonGuageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5BDC9F1AC84060000EA960 /* HorizonGuageView.m */; };
+		EF5BDCA71AC9D165000EA960 /* NSImage+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5BDCA61AC9D165000EA960 /* NSImage+Transform.m */; };
 		EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA904881A7288EF00D728A8 /* AppDelegate.m */; };
 		EFA9048B1A7288EF00D728A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA9048A1A7288EF00D728A8 /* main.m */; };
 		EFA904901A7288EF00D728A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA9048F1A7288EF00D728A8 /* Images.xcassets */; };
@@ -77,6 +80,12 @@
 		EF5BDC931AC7B71A000EA960 /* SensorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorsViewController.m; sourceTree = "<group>"; };
 		EF5BDC951AC7B826000EA960 /* SensorGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorGraphView.h; sourceTree = "<group>"; };
 		EF5BDC961AC7B826000EA960 /* SensorGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorGraphView.m; sourceTree = "<group>"; };
+		EF5BDC9B1AC84040000EA960 /* GuagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuagesViewController.h; sourceTree = "<group>"; };
+		EF5BDC9C1AC84040000EA960 /* GuagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuagesViewController.m; sourceTree = "<group>"; };
+		EF5BDC9E1AC84060000EA960 /* HorizonGuageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizonGuageView.h; sourceTree = "<group>"; };
+		EF5BDC9F1AC84060000EA960 /* HorizonGuageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizonGuageView.m; sourceTree = "<group>"; };
+		EF5BDCA51AC9D165000EA960 /* NSImage+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Transform.h"; sourceTree = "<group>"; };
+		EF5BDCA61AC9D165000EA960 /* NSImage+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Transform.m"; sourceTree = "<group>"; };
 		EFA904821A7288EF00D728A8 /* PhoenixFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoenixFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA904861A7288EF00D728A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFA904871A7288EF00D728A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +130,8 @@
 				10960C1F5701CA97474232EE /* TransmitterView.h */,
 				EF5BDC951AC7B826000EA960 /* SensorGraphView.h */,
 				EF5BDC961AC7B826000EA960 /* SensorGraphView.m */,
+				EF5BDC9E1AC84060000EA960 /* HorizonGuageView.h */,
+				EF5BDC9F1AC84060000EA960 /* HorizonGuageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +141,8 @@
 			children = (
 				1096031E1C69DF657B909C78 /* NSData+PhoenixFC.m */,
 				109605A294FA03BBE48826D1 /* NSData+PhoenixFC.h */,
+				EF5BDCA51AC9D165000EA960 /* NSImage+Transform.h */,
+				EF5BDCA61AC9D165000EA960 /* NSImage+Transform.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -145,6 +158,8 @@
 				109601222431E0766D238497 /* ConsoleViewController.m */,
 				EF5BDC921AC7B71A000EA960 /* SensorsViewController.h */,
 				EF5BDC931AC7B71A000EA960 /* SensorsViewController.m */,
+				EF5BDC9B1AC84040000EA960 /* GuagesViewController.h */,
+				EF5BDC9C1AC84040000EA960 /* GuagesViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -429,15 +444,18 @@
 				EF5BDC941AC7B71A000EA960 /* SensorsViewController.m in Sources */,
 				EFA9048B1A7288EF00D728A8 /* main.m in Sources */,
 				EFFB82A71A7DFDC600F5643A /* FlightController.m in Sources */,
+				EF5BDCA71AC9D165000EA960 /* NSImage+Transform.m in Sources */,
 				EF5BDC971AC7B826000EA960 /* SensorGraphView.m in Sources */,
 				EFA904891A7288EF00D728A8 /* AppDelegate.m in Sources */,
 				1096097F1686CA9E2169EC1A /* TransmitterStickView.m in Sources */,
 				10960AD90B471D6924E733AF /* TransmitterView.m in Sources */,
 				109606EBA67875E0667A78D7 /* NSData+PhoenixFC.m in Sources */,
+				EF5BDCA01AC84060000EA960 /* HorizonGuageView.m in Sources */,
 				10960DF77C138CCB946A4632 /* ChannelConfig.m in Sources */,
 				10960073710D5D255651294F /* RxWizardStep.m in Sources */,
 				1096055632981A4ADA8D332D /* RxConfigWizardViewController.m in Sources */,
 				10960732C5B88F8EC8ED141C /* TransmitterConfigViewController.m in Sources */,
+				EF5BDC9D1AC84040000EA960 /* GuagesViewController.m in Sources */,
 				EF2485161AA75D240045438C /* MainWindowController.m in Sources */,
 				10960802E8A3E8979FE5C48E /* ConsoleViewController.m in Sources */,
 				1096027E3819BC94A7A72F54 /* FCConfiguration.m in Sources */,

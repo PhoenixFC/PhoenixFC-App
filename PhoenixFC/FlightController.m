@@ -76,6 +76,22 @@
     [serialPort sendRequest:request];
 }
 
+
+- (void)sendSensorRequest {
+    NSData *requestData = [@"SA" dataUsingEncoding:NSASCIIStringEncoding];
+    ORSSerialRequest *request = [ORSSerialRequest
+                                  requestWithDataToSend:requestData
+                                               userInfo:@"SA"
+                                        timeoutInterval:0.1
+                                      responseEvaluator:^BOOL(NSData *inputData) {
+                                          if ([inputData length] < 47) return NO;
+                                          NSData *headerData = [inputData subdataWithRange:NSMakeRange(0, 3)];
+                                          NSString *header = [[NSString alloc] initWithData:headerData encoding:NSASCIIStringEncoding];
+                                          return [header isEqualToString:@"AX:"];
+                                      }];
+    [serialPort sendRequest:request];
+}
+
 - (void)sendRawRxRequest {
     NSData *requestData = [@"RR" dataUsingEncoding:NSASCIIStringEncoding];
     ORSSerialRequest *request = [ORSSerialRequest
@@ -105,6 +121,12 @@
         if( [delegate respondsToSelector:@selector(flightControllerDidReceiveRawRxPacket:)] )
             [delegate flightControllerDidReceiveRawRxPacket:packet];
     }
+    else if( [requestId isEqualToString:@"SA"] )
+    {
+        SensorPacket packet = [self processSensorPacket:responseData];
+        if( [delegate respondsToSelector:@selector(flightControllerDidReceiveSensorPacket:)] )
+            [delegate flightControllerDidReceiveSensorPacket:packet];
+    }
 }
 
 - (void)serialPort:(ORSSerialPort *)serialPort requestDidTimeout:(ORSSerialRequest *)request {
@@ -121,6 +143,23 @@
     packet.channel4 = [data getIntegerWithRange:NSMakeRange(31,4)];
     packet.channel5 = [data getIntegerWithRange:NSMakeRange(40,4)];
     packet.channel6 = [data getIntegerWithRange:NSMakeRange(49,4)];
+    return packet;
+}
+
+// Packet Format
+// AX:1000,AY:1000,AZ:1000,GX:1000,GY:1000,GZ:1000;
+- (SensorPacket)processSensorPacket:(NSData *)data {
+    NSString *sensorData = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSArray *components = [sensorData componentsSeparatedByString:@","];
+
+    SensorPacket packet;
+    packet.accel_x = [[components[0] substringFromIndex:3] intValue] / 20;
+//    packet.accel_y = [data getIntegerWithRange:NSMakeRange(11,4)];
+//    packet.accel_z = [data getIntegerWithRange:NSMakeRange(19,4)];
+//    packet.gyro_x = [data getIntegerWithRange:NSMakeRange(27,4)];
+//    packet.gyro_y = [data getIntegerWithRange:NSMakeRange(35,4)];
+//    packet.gyro_z = [data getIntegerWithRange:NSMakeRange(43,4)];
+
     return packet;
 }
 

@@ -11,11 +11,22 @@ typedef struct _RxPacket
     NSInteger channel6;
 } RxPacket;
 
+typedef struct _SensorPacket
+{
+    NSInteger accel_x;
+    NSInteger accel_y;
+    NSInteger accel_z;
+    NSInteger gyro_x;
+    NSInteger gyro_y;
+    NSInteger gyro_z;
+} SensorPacket;
+
 @protocol FlightControllerDelegate
 @optional
 - (void)flightControllerConsoleDidChange:(NSString *)value;
 - (void)flightControllerDidReceiveRxPacket:(RxPacket)packet;
 - (void)flightControllerDidReceiveRawRxPacket:(RxPacket)packet;
+- (void)flightControllerDidReceiveSensorPacket:(SensorPacket)packet;
 @end
 
 @interface FlightController : NSObject <ORSSerialPortDelegate>
@@ -30,5 +41,6 @@ typedef struct _RxPacket
 
 - (void)sendRxRequest;
 - (void)sendRawRxRequest;
+- (void)sendSensorRequest;
 
 @end

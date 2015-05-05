@@ -10,7 +10,7 @@
 #import "SensorGraphView.h"
 
 #define kVerticalCells 36
-#define kFPS 20
+#define kFPS 50
 
 @interface SensorGraphView ()
 @property (nonatomic, assign) NSUInteger frameCount;

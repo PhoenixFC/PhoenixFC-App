@@ -8,10 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SensorGraphView.h"
+#import "FlightController.h"
 
-@interface SensorsViewController : NSViewController <SensorGraphDataSource>
+@interface SensorsViewController : NSViewController <SensorGraphDataSource, FlightControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet SensorGraphView *sensorGraph;
 @property (nonatomic, weak) IBOutlet NSSlider *fakeDataSlider;
 
+@property (nonatomic, strong) FlightController *flightController;
 @end
