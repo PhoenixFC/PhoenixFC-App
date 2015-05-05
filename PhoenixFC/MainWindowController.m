@@ -20,8 +20,16 @@
     self.window.titleVisibility = NSWindowTitleVisible;
 }
 
-- (IBAction)toggle:(id)sender {
-    NSLog(@"toggle clicked!");
+- (IBAction)connectClicked:(id)sender {
+    NSLog(@"connectClicked:");
+    _connectToolbarItem.label = @"Disconnect";
+    [_connectToolbarItem setAction:@selector(disconnectClicked:)];
+}
+
+- (IBAction)disconnectClicked:(id)sender {
+    NSLog(@"disconnectClicked:");
+    _connectToolbarItem.label = @"Connect";
+    [_connectToolbarItem setAction:@selector(connectClicked:)];
 }
 
 @end

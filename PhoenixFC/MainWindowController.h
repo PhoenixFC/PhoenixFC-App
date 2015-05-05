@@ -10,6 +10,9 @@
 
 @interface MainWindowController : NSWindowController
 
-- (IBAction)toggle:(id)sender;
+@property (nonatomic, weak) IBOutlet NSToolbarItem *connectToolbarItem;
+
+- (IBAction)connectClicked:(id)sender;
+- (IBAction)disconnectClicked:(id)sender;
 
 @end

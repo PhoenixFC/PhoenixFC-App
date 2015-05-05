@@ -655,7 +655,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="300"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="555D27F4-0DA5-48C2-BDC5-58C3BB9EFB18" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="TWZ-Gz-nvb">
+                        <toolbar key="toolbar" implicitIdentifier="555D27F4-0DA5-48C2-BDC5-58C3BB9EFB18" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="TWZ-Gz-nvb">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="sie-ab-WhG"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="IGa-BF-coM"/>
@@ -673,7 +673,7 @@
                                         </buttonCell>
                                     </button>
                                     <connections>
-                                        <action selector="toggle:" target="B8D-0N-5wS" id="iss-it-aB5"/>
+                                        <action selector="connectClicked:" target="B8D-0N-5wS" id="f4U-3y-bp6"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
@@ -681,9 +681,13 @@
                                 <toolbarItem reference="IGa-BF-coM"/>
                                 <toolbarItem reference="kjB-fY-Dxt"/>
                             </defaultToolbarItems>
+                            <connections>
+                                <outlet property="delegate" destination="B8D-0N-5wS" id="QIe-Bc-y4c"/>
+                            </connections>
                         </toolbar>
                     </window>
                     <connections>
+                        <outlet property="connectToolbarItem" destination="kjB-fY-Dxt" id="uXi-QG-ohi"/>
                         <segue destination="tMb-pp-O34" kind="relationship" relationship="window.shadowedContentViewController" id="4jP-H9-ydu"/>
                     </connections>
                 </windowController>
